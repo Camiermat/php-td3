@@ -12,16 +12,17 @@
 const DEBUG = true; // production : false; dev : true
 
 // Accès base de données
-const BD_HOST = '';
-const BD_DBNAME = '';
-const BD_USER = '';
-const BD_PWD = '';
+const BD_HOST = 'localhost';
+const BD_DBNAME = 'p1805797';
+const BD_USER = 'p1805797';
+const BD_PWD = '368798';
 
 // Langue du site
 const LANG ='FR-fr';
 
 // Paramètres du site : nom de l'auteur ou des auteurs
-const AUTEUR = ''; 
+const AUTEUR = 'DAURELLE Timothée et CAMIER Mattéo'; 
+define('TITRE','Mes Photos');
 
 //dossiers racines du site
 define('PATH_CONTROLLERS','./controllers/c_');
@@ -30,7 +31,8 @@ define('PATH_LIB','./lib/');
 define('PATH_MODELS','./models/m_');
 define('PATH_VIEWS','./views/v_');
 define('PATH_TEXTES','./languages/');
-define('TITRE','Mes Photos');
+define('PATH_ENTITY','./entities/');
+
 //sous dossiers
 define('PATH_CSS', PATH_ASSETS.'css/');
 define('PATH_IMAGES', PATH_ASSETS.'images/');
