@@ -30,7 +30,7 @@ define('PATH_LIB','./lib/');
 define('PATH_MODELS','./models/m_');
 define('PATH_VIEWS','./views/v_');
 define('PATH_TEXTES','./languages/');
-
+define('TITRE','Mes Photos');
 //sous dossiers
 define('PATH_CSS', PATH_ASSETS.'css/');
 define('PATH_IMAGES', PATH_ASSETS.'images/');

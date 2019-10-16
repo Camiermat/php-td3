@@ -15,10 +15,10 @@
 <!-- Menu du site -->
 
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container-fluid" >
     <ul class="nav navbar-nav">
 				<li <?php echo ($page=='index' ? 'class="active"':'')?>>
-					<a href="index.php">
+					<a href="index.php" >
 						<?= MENU_ACCUEIL ?>
 					</a>
 				</li>
