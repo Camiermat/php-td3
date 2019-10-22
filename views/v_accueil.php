@@ -11,6 +11,7 @@
  *
  */
 //  En tête de page
+require(PATH_ENTITY.'Photo.php');
 ?>
 <?php require_once(PATH_VIEWS.'header.php');?>
 
@@ -22,6 +23,21 @@
 
 <!--  Formulaire -->
 
+<!--  Table  -->
+
+
+<table class="table table-bordered">
+<?php
+// affichage des photos
+$photos = __getAllPhoto();
+foreach($photos as &$p)
+{
+	echo '<div class = "col-md-6 col-sm-6 col-xs-12">';
+	echo '<img src="'.PATH_IMAGES.$p->getNomFich().'" alt="Photo">';
+	echo '</div>';
+}
+?>
+</table>
 <!--  Fin de la page -->
 
 

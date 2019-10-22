@@ -1,7 +1,7 @@
 <?php
 class Photo {
 	private $_photoId;
-	private $_nomFich
+	private $_nomFich;
 	private $_description;
 	private $_catId;
 	

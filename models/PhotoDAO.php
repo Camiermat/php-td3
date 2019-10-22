@@ -10,5 +10,13 @@ class PhotoDAO extends DAO {
 			return new Photo($_res['photoId'],$_res['nomFich'],$_res['description'],$_res['catId']);
 		} else return null;
 	}
+	
+	public function __getPhoto(){
+		$res = $this->queryRow('SELECT * FROM Photo where photoId = ?',array($i));
+		if ($res){
+			require_once(PATH_UTILITIES,'Photo.php');
+			return new Photo($_res['photoId'],$_res['nomFich'],$_res['description'],$_res['catId']);
+		} else return null;
+	}
 }
 ?>
