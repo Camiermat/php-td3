@@ -21,6 +21,13 @@
 <h1><?php  echo TITRE_PAGE_ACCUEIL;?></h1>
 
 <!--  Formulaire -->
+<?
+echo '<table class="table table-bordered">';
+for (Photo:$photos){
+	echo ='<div class="col-md-6 col-sm-6 col-xs-12"><img src="'.Photo->__getNomFich().'"></div>';
+}
+echo '</table>';
+?>
 
 <!--  Fin de la page -->
 
