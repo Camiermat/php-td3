@@ -22,7 +22,7 @@
 
 <!--  Liste  -->
 
-
+echo ='<img src=".x.">';
 <!--  Fin de la page -->
 
 

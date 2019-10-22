@@ -5,6 +5,7 @@ if (isset($_GET['nom']))
 {
   $nom =  htmlspecialchars($_GET['nom']);
 
+<<<<<<< HEAD
   //Appel du modèle
   require_once('UtilisateurDAO.php');
   
@@ -27,3 +28,6 @@ else
 	// retour à la page d'accueil si il n'y pas de paramètre
      header('Location: index.php');
 }
+=======
+?>
+>>>>>>> e13ed393672b00fe181950202aa01d67b7dd19f1
