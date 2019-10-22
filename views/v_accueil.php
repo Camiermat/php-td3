@@ -22,29 +22,27 @@ require(PATH_ENTITY.'Photo.php');
 <h1><?php  echo TITRE_PAGE_ACCUEIL;?></h1>
 
 <!--  Formulaire -->
-<?
-echo '<table class="table table-bordered">';
-for (Photo:$photos){
-	echo ='<div class="col-md-6 col-sm-6 col-xs-12"><img src="'.Photo->__getNomFich().'"></div>';
-}
-echo '</table>';
-?>
 
 <!--  Table  -->
 
+<div class="alert alert-success" role="alert">
+	<?php
+		$nbrPhoto = (new PhotoDAO()) -> __getNbrPhotos();
+		echo $nbrPhoto[0].' photo(s) selectionnée(s)';
+	?>
+</div>
 
 <table class="table table-bordered">
 <?php
 // affichage des photos
-$photos = __getAllPhoto();
-foreach($photos as &$p)
+$photos = (new PhotoDAO()) -> __getAllPhoto();
+foreach ($photos as &$p)
 {
-	echo '<div class = "col-md-6 col-sm-6 col-xs-12">';
-	echo '<img src="'.PATH_IMAGES.$p->getNomFich().'" alt="Photo">';
-	echo '</div>';
+	echo '<img src="'.PATH_IMAGES.$p->__getNomFich().'" alt="Photo">';
 }
 ?>
 </table>
+
 <!--  Fin de la page -->
 
 

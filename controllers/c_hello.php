@@ -28,6 +28,4 @@ else
 	// retour à la page d'accueil si il n'y pas de paramètre
      header('Location: index.php');
 }
-=======
 ?>
->>>>>>> e13ed393672b00fe181950202aa01d67b7dd19f1

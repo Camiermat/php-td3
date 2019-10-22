@@ -13,12 +13,5 @@
 
 
 //appel de la vue
-require_once(PATH_VIEWS.$page.'.php');
 require_once(PATH_MODELS.'PhotoDAO.php');
-<<<<<<< HEAD
-
-
-=======
-	$photos = __getAllPhoto();
-	
->>>>>>> e13ed393672b00fe181950202aa01d67b7dd19f1
+require_once(PATH_VIEWS.$page.'.php');
