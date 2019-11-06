@@ -13,9 +13,9 @@ const DEBUG = true; // production : false; dev : true
 
 // Accès base de données
 const BD_HOST = 'localhost';
-const BD_DBNAME = 'p1805797';
-const BD_USER = 'p1805797';
-const BD_PWD = '368798';
+const BD_DBNAME = 'cours';
+const BD_USER = 'root';
+const BD_PWD = '';
 
 // Langue du site
 const LANG ='FR-fr';
