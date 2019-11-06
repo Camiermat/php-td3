@@ -10,8 +10,22 @@ class PhotoDAO extends DAO {
 			return new Photo($res['photoId'],$res['nomFich'],$res['description'],$res['catId']);
 		} else return null;
 	}
+	
 	public function __getAllPhoto(){
 		$res = $this->queryAll('SELECT * from Photo');
+		if ($res){
+			require_once(PATH_ENTITY.'Photo.php');
+			foreach ($res as $p) {
+				$tab[] = new Photo($p['photoId'],$p['nomFich'],$p['description'],$p['catId']);
+			}
+			return $tab;
+		} else return null;
+	}
+	
+	public function __getAllPhotoCat($c){
+		
+		$res = $this-> prepare('SELECT * from Photo where nomCat=?');
+		$res -> execute(array(htmlspecialchars($c)));
 		if ($res){
 			require_once(PATH_ENTITY.'Photo.php');
 			foreach ($res as $p) {
