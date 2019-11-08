@@ -20,15 +20,17 @@ require(PATH_ENTITY.'Categorie.php');
 <?php require_once(PATH_VIEWS.'alert.php');?>
 
 <!--  Début de la page -->
-<h1><?php  echo TITRE_PAGE_ACCUEIL;?></h1>
+<h1><?php  echo TITRE_PAGE_DETAIL;?></h1>
 
 <!--  Formulaire -->
-<div class="alert alert-success" role="alert">
-	<?php
-		$nbrPhoto = (new PhotoDAO()) -> __getNbrPhotos();
-		echo $nbrPhoto[0].' photo(s) selectionnée(s)';
-	?>
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<!-- Affichage de la photo -->
+	
 </div>
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<!-- Affichage du tableau -->
+</div>
+
 <div>
 	<form name="myform" cible="index.php" method="GET">
 		<p><?= TEXTE_PAGE_ACCUEIL1 ?></p>
@@ -69,7 +71,7 @@ if($cat!=TEXTE_PAGE_ACCUEIL2){
 }
 foreach ($photos as &$p)
 {
-	echo '<a href="index.php"><img  src="'.PATH_IMAGES.$p->__getNomFich().'" alt="Photo"></a>';
+	echo '<img src="'.PATH_IMAGES.$p->__getNomFich().'" alt="Photo">';
 }
 ?>
 

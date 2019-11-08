@@ -23,8 +23,7 @@ class PhotoDAO extends DAO {
 	}
 	
 	public function __getAllPhotoCat($c){
-		
-		$res = $this-> prepare('SELECT * from Photo where nomCat=?');
+		$res = $this->prepareCat('SELECT * from Photo, Categorie where Categorie.catId=Photo.catId and nomCat=?');
 		$res -> execute(array(htmlspecialchars($c)));
 		if ($res){
 			require_once(PATH_ENTITY.'Photo.php');

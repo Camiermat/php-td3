@@ -25,7 +25,6 @@ abstract class DAO
     else 
     {
 	$pdos = Connexion::getInstance()->getBdd()->prepare($sql);// requête préparée
-	$pdos->execute($args);
     }
     return $pdos;
   }
@@ -68,5 +67,22 @@ abstract class DAO
 	  $res = false;
 	} 
     return $res;
+  }
+  
+  public function prepareCat($sql, $args = null)
+  {
+	try
+	{
+		$args=2;
+		$pdos = $this->_requete($sql, $args);
+	}
+	catch(PDOException $e)
+	{ 
+	  if($this->_debug)
+            die($e->getMessage());
+          $this->_erreur = 'query';
+	  $pdos = false;
+	} 
+    return $pdos;
   }
 }
