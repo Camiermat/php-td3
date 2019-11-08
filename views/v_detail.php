@@ -11,7 +11,6 @@
  *
  */
 //  En tête de page
-require(PATH_ENTITY.'Photo.php');
 require(PATH_ENTITY.'Categorie.php');
 ?>
 <?php require_once(PATH_VIEWS.'header.php');?>
@@ -24,56 +23,40 @@ require(PATH_ENTITY.'Categorie.php');
 
 <!--  Formulaire -->
 <div class="col-md-6 col-sm-6 col-xs-12">
-	<!-- Affichage de la photo -->
-	
+	<img src="<?=PATH_IMAGES.$p->__getNomFich()?>" alt="Photo"/>
 </div>
 <div class="col-md-6 col-sm-6 col-xs-12">
-	<!-- Affichage du tableau -->
+	<table class="table table-bordered">
+		<tr>
+			<td>
+				<?php  echo TITRE_TABLE_1;?>
+			</td>
+				
+			<td>
+				<?php  echo $p->__getDescription();?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<?php  echo TITRE_TABLE_2;?>
+			</td>
+			<td>
+				<?php  echo $p->__getNomFich();?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<?php  echo TITRE_TABLE_3;?>
+			</td>
+			<td>
+				<?php  
+					$cp = (new PhotoDAO())->__getCatPhoto($id);
+					echo '<a href="index.php?categorie='.$cp.'">'.$cp.'</a>';
+				?>
+			</td>
+		</tr>
+	</table>
 </div>
-
-<div>
-	<form name="myform" cible="index.php" method="GET">
-		<p><?= TEXTE_PAGE_ACCUEIL1 ?></p>
-		<select name="categorie" id="cat-id" onchange="myform.submit()">
-			<?php
-			if(!isset($_GET['categorie'])){
-				echo '<option value="'.TEXTE_PAGE_ACCUEIL2.'">'.TEXTE_PAGE_ACCUEIL2.'</option>';
-				$categories = (new CategorieDAO()) -> __getAllCategorie();
-				foreach ($categories as $c)
-				{
-					echo '<option value="'.$c->__getNomCat().'">'.$c->__getNomCat().'</option>';
-				}
-			} else {
-				echo '<option value="'.$_GET['categorie'].'">'.$_GET['categorie'].'</option>';
-				$categories = (new CategorieDAO()) -> __getAllCategorie();
-				foreach ($categories as $c)
-				{
-					if ($c->__getNomCat()!=$_GET['categorie']){
-						echo '<option value="'.$c->__getNomCat().'">'.$c->__getNomCat().'</option>';
-					}
-				}
-				if($_GET['categorie']!=TEXTE_PAGE_ACCUEIL2){
-					echo '<option value="'.TEXTE_PAGE_ACCUEIL2.'">'.TEXTE_PAGE_ACCUEIL2.'</option>';
-				}
-			}
-			?>
-		</select>
-	</form>
-</div>
-
-<?php
-// affichage des photos
-
-if($cat!=TEXTE_PAGE_ACCUEIL2){
-	$photos = (new PhotoDAO()) -> __getAllPhotoCat($cat);
-} else {
-	$photos = (new PhotoDAO()) -> __getAllPhoto();
-}
-foreach ($photos as &$p)
-{
-	echo '<img src="'.PATH_IMAGES.$p->__getNomFich().'" alt="Photo">';
-}
-?>
 
 <!--  Fin de la page -->
 

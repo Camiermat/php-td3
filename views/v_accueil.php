@@ -69,7 +69,7 @@ if($cat!=TEXTE_PAGE_ACCUEIL2){
 }
 foreach ($photos as &$p)
 {
-	echo '<a href="index.php"><img  src="'.PATH_IMAGES.$p->__getNomFich().'" alt="Photo"></a>';
+	echo '<a href="index.php?page=detail&id='.$p->__getPhotoId().'"><img  src="'.PATH_IMAGES.$p->__getNomFich().'" alt="Photo"></a>';
 }
 ?>
 

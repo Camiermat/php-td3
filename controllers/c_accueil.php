@@ -16,7 +16,7 @@
 require_once(PATH_MODELS.'PhotoDAO.php');
 require_once(PATH_MODELS.'CategorieDAO.php');
 
-$cat = "";
+$cat = TEXTE_PAGE_ACCUEIL2;
 if (isset($_GET["categorie"])){
 	$cat =  htmlspecialchars($_GET['categorie']);
 }
